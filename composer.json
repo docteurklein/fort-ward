@@ -1,0 +1,16 @@
+{
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "videlalvaro/php-amqplib": "~2.4",
+        "react/stomp": "~0.2",
+        "docteurklein/funk-spec": "@dev",
+        "bossa/phpspec2-expect": "~1.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Forward": "src"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+php: &php
+    build: fig/php
+    working_dir: /src
+    volumes:
+        - .:/src
+    environment:
+        SYMFONY__rabbit_host: rabbit
+    volumes:
+        - .:/src
+    links:
+        - rabbit
+
+rabbit:
+    hostname: rabbit
+    build: fig/rabbit
+    volumes:
+        - fig/rabbit/data/log:/data/log
+        - fig/rabbit/data/mnesia:/data/mnesia
+    ports:
+        - 5672:5672
+        - 15672:15672
+        - 61613:61613
+
+funk:
+    <<: *php
+    command: vendor/bin/funk funk
+

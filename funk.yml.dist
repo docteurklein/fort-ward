@@ -1,0 +1,4 @@
+default:
+    autoload:
+        funk: %paths.base%
+
